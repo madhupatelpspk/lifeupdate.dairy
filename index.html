@@ -199,6 +199,41 @@
 
         .icon {
             font-size: 24px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+        }
+
+        /* Instagram social button */
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+        }
+
+        .social-btn:active {
+            transform: translateY(0);
         }
 
     </style>
@@ -222,13 +257,30 @@
             <div class="label">Followers</div>
             <p class="message">Thank you for being part of the journey! <br> Next stop: The Moon 🚀</p>
             
-            <button class="action-btn">View Profile</button>
+            <button class="action-btn">madhuuuuu</button>
         </div>
 
         <div class="story-footer">
             <div class="reply-box"></div>
             <div class="icon">❤️</div>
             <div class="icon">🚀</div>
+
+            <!-- Instagram link social icon button -->
+            <a
+                class="social-btn"
+                href="https://instagram.com/lifeupdate.diary"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Instagram"
+                title="Instagram"
+            >
+                <!-- Instagram SVG icon (simple filled camera glyph) -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect x="2" y="2" width="20" height="20" rx="5" fill="#cc2366"/>
+                    <path d="M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9z" fill="#fff"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="#fff"/>
+                </svg>
+            </a>
         </div>
     </div>
 
