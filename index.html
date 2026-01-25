@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Lifeupdate.dairy Achievement</title>
     <style>
         /* Base Setup */
@@ -22,7 +22,7 @@
         /* The Mobile "Screen" */
         .story-container {
             width: 360px;
-            height: 640px;
+            height: 740px;
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             border-radius: 20px;
             position: relative;
@@ -31,8 +31,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             color: white;
+            padding-top: 6px;
         }
 
         /* Story Progress Bar (Top) */
@@ -91,7 +92,8 @@
         /* The Glass Achievement Card */
         .achievement-box {
             width: 80%;
-            padding: 40px 20px;
+            margin-top: 70px;
+            padding: 32px 20px;
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -154,25 +156,191 @@
             transform: scale(0.95);
         }
 
-        /* Confetti Effect (CSS Only Simplification) */
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ffd700;
-            animation: fall linear infinite;
-        }
-
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
 
+        /* Instagram achievement card (new) */
+        .instagram-achievement {
+            width: 86%;
+            margin-top: 14px;
+            padding: 14px 14px;
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.18);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+            color: white;
+        }
+
+        .instagram-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #f09433 0%, #bc1888 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .insta-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .insta-handle {
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+        }
+
+        .insta-followers {
+            font-weight: 800;
+            font-size: 20px;
+            color: #fff;
+            opacity: 0.95;
+        }
+
+        .insta-meta {
+            font-size: 12px;
+            opacity: 0.85;
+        }
+
+        .follow-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.6);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .follow-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+        }
+
+        /* Milestone / Timeline list */
+        .milestones {
+            width: 86%;
+            margin-top: 12px;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .milestone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .milestone .dot {
+            width: 36px;
+            height: 36px;
+            flex: 0 0 36px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .milestone .text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .milestone .title {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .milestone .when {
+            opacity: 0.9;
+            font-size: 12px;
+        }
+
+        /* Engagement row (likes and "more like") */
+        .engagement {
+            width: 86%;
+            margin-top: 12px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .like-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .like-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.14);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .like-count {
+            font-weight: 800;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .more-like {
+            background: white;
+            color: #cc2366;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.12s ease;
+        }
+
+        .more-like:active {
+            transform: scale(0.98);
+        }
+
         /* Bottom UI (Reply Input) */
         .story-footer {
             position: absolute;
-            bottom: 20px;
+            bottom: 18px;
             width: 90%;
             display: flex;
             align-items: center;
@@ -236,34 +404,94 @@
             transform: translateY(0);
         }
 
+        /* Small responsive tweak */
+        @media (max-width: 400px) {
+            .story-container { transform: scale(0.95); }
+        }
     </style>
 </head>
 <body>
 
-    <div class="story-container">
-        <div class="progress-bar-container">
+    <div class="story-container" role="main" aria-label="Lifeupdate.dairy story card">
+        <div class="progress-bar-container" aria-hidden="true">
             <div class="progress-segment active"></div>
             <div class="progress-segment"></div>
         </div>
 
         <div class="story-header">
-            <div class="pfp"></div> <span class="username">lifeupdate.dairy</span>
-            <span class="time">12h</span>
+            <div class="pfp" role="img" aria-label="Profile picture"></div>
+            <span class="username">lifeupdate.dairy</span>
+            <span class="time" style="margin-left:8px;">12h</span>
         </div>
 
-        <div class="achievement-box">
-            <span class="milestone-icon">🎉</span>
-            <h1 class="count">LIFE UPDATE</h1>
+        <div class="achievement-box" aria-labelledby="achievement-title">
+            <span class="milestone-icon" aria-hidden="true">🎉</span>
+            <h1 id="achievement-title" class="count">LIFE UPDATE</h1>
             <div class="label">Followers</div>
-            <p class="message">Thank you for being part of the journey! <br> Next stop: The Moon 🚀</p>
-            
-            <button class="action-btn">madhuuuuu</button>
+            <p class="message">Thank you for being part of the journey! <br> Admin </p>
+            <button class="action-btn" aria-label="Primary action">madhuuuuu</button>
         </div>
 
-        <div class="story-footer">
-            <div class="reply-box"></div>
-            <div class="icon">❤️</div>
-            <div class="icon">🚀</div>
+        <!-- Instagram achievement section -->
+        <div class="instagram-achievement" role="region" aria-label="Instagram achievement">
+            <div class="instagram-icon" aria-hidden="true">📸</div>
+            <div class="insta-content">
+                <div class="insta-handle">@lifeupdate.diary</div>
+                <div class="insta-followers" id="follower-count">123 followers</div>
+                <div class="insta-meta">Sharing moments, milestones and daily updates — follow us on Instagram</div>
+            </div>
+            <a
+                class="follow-btn"
+                href="https://instagram.com/lifeupdate.diary"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow on Instagram"
+                title="Follow on Instagram"
+            >
+                Follow
+            </a>
+        </div>
+
+        <!-- Milestones: page started and goal reached -->
+        <div class="milestones" role="list" aria-label="Milestones">
+            <div class="milestone" role="listitem" aria-label="Page started">
+                <div class="dot" aria-hidden="true">🟢</div>
+                <div class="text">
+                    <div class="title">Page started</div>
+                    <div class="when">03/01/2026</div>
+                </div>
+            </div>
+
+            <div class="milestone" role="listitem" aria-label="Hit 1M views">
+                <div class="dot" aria-hidden="true">🏁</div>
+                <div class="text">
+                    <div class="title">Hit 1M views</div>
+                    <div class="when">24/01/2026</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engagement: likes + more like button -->
+        <div class="engagement" aria-label="Engagement controls">
+            <div class="like-box">
+                <button class="like-btn" id="likeBtn" aria-pressed="false" aria-label="Like">
+                    ❤️
+                </button>
+                <div>
+                    <div class="like-count" id="likeCount">48</div>
+                    <div style="font-size:11px; opacity:0.85;">Likes</div>
+                </div>
+            </div>
+
+            <div>
+                <button class="more-like" id="moreLikeBtn" aria-label="Add more likes">More like</button>
+            </div>
+        </div>
+
+        <div class="story-footer" aria-hidden="false">
+            <div class="reply-box" role="textbox" aria-label="Reply input"></div>
+            <div class="icon" role="button" aria-label="Love">❤️</div>
+            <div class="icon" role="button" aria-label="Rocket">🚀</div>
 
             <!-- Instagram link social icon button -->
             <a
@@ -284,5 +512,45 @@
         </div>
     </div>
 
+    <script>
+        // Simple like increment logic
+        (function(){
+            const likeBtn = document.getElementById('likeBtn');
+            const likeCountEl = document.getElementById('likeCount');
+            const moreLikeBtn = document.getElementById('moreLikeBtn');
+
+            let likeCount = parseInt(likeCountEl.textContent, 10) || 0;
+            let liked = false;
+
+            function updateLikeUI() {
+                likeCountEl.textContent = likeCount.toLocaleString();
+                likeBtn.setAttribute('aria-pressed', String(liked));
+                likeBtn.style.background = liked ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.12)';
+            }
+
+            likeBtn.addEventListener('click', function() {
+                // toggle like
+                if (liked) {
+                    likeCount = Math.max(0, likeCount - 1);
+                    liked = false;
+                } else {
+                    likeCount = likeCount + 1;
+                    liked = true;
+                }
+                updateLikeUI();
+            });
+
+            moreLikeBtn.addEventListener('click', function() {
+                // simulate "more like" increments (adds 5)
+                likeCount = likeCount + 5;
+                // small pulse animation
+                moreLikeBtn.animate([{ transform: 'scale(1)' }, { transform: 'scale(0.96)' }, { transform: 'scale(1)' }], { duration: 220 });
+                updateLikeUI();
+            });
+
+            // initial update
+            updateLikeUI();
+        })();
+    </script>
 </body>
 </html>
